@@ -112,6 +112,81 @@
     @media (max-width: 800px) { .hero-video { min-height: 100svh; } .hero-video h1 { font-size: clamp(32px, 9vw, 48px); } }
     @media (max-width: 768px) { .nav-links { display: none; } .product-grid { grid-template-columns: 1fr 1fr; gap: 12px; } .product-body { padding: 12px; } .product-body h3 { font-size: 13px; } .price-main .amount { font-size: 15px; } .section { padding: 40px 16px; } }
     @media (max-width: 480px) { .product-grid { grid-template-columns: 1fr; } }
+
+    .gallery {
+      position: relative;
+      width: 100%;
+      background: var(--black);
+      overflow: hidden;
+    }
+    .gallery-track {
+      display: flex;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    .gallery-slide {
+      min-width: 100%;
+      position: relative;
+      aspect-ratio: 21 / 9;
+      max-height: 520px;
+      background: var(--dark);
+    }
+    .gallery-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .gallery-slide .slide-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(11,12,14,0.55) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .gallery-dots {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 5;
+    }
+    .gallery-dots button {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(248,248,249,0.35);
+      cursor: pointer;
+      padding: 0;
+      transition: background .25s, transform .25s;
+    }
+    .gallery-dots button.active {
+      background: var(--white);
+      transform: scale(1.25);
+    }
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(248,248,249,0.25);
+      background: rgba(11,12,14,0.55);
+      color: var(--white);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(8px);
+      transition: background .2s;
+    }
+    .gallery-nav:hover { background: rgba(11,12,14,0.85); }
+    .gallery-nav.prev { left: 16px; }
+    .gallery-nav.next { right: 16px; }
+    .gallery-nav svg { width: 18px; height: 18px; }
+    @media (max-width: 768px) {
+      .gallery-slide { aspect-ratio: 16 / 10; max-height: 360px; }
+      .gallery-nav { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -147,6 +222,34 @@
     </div>
     <div class="scroll-hint"><span>Scroll</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
   </section>
+
+  <section class="gallery" id="promos" aria-label="Promociones">
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gallery-slide">
+        <img src="banner-adquierelo.jpg" alt="Adquiérelo YA - iPhone 18 Pro y Pro Max">
+      </div>
+      <div class="gallery-slide">
+        <img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-black.png" alt="iPhone 18 Pro Max" style="object-fit:contain;background:#0B0C0E;padding:40px;">
+        <div class="slide-overlay"></div>
+      </div>
+      <div class="gallery-slide">
+        <img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-glacier.png" alt="iPhone 18 Pro Max Glacier" style="object-fit:contain;background:#0B0C0E;padding:40px;">
+        <div class="slide-overlay"></div>
+      </div>
+      <div class="gallery-slide">
+        <img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-silver.png" alt="iPhone 18 Pro Max Silver" style="object-fit:contain;background:#0B0C0E;padding:40px;">
+        <div class="slide-overlay"></div>
+      </div>
+    </div>
+    <button type="button" class="gallery-nav prev" id="galPrev" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="gallery-nav next" id="galNext" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </section>
+
   <div class="trust reveal">
     <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>1 año de garantía oficial</div>
     <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Equipos nuevos en caja sellada</div>
@@ -230,6 +333,31 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    (function () {
+      const track = document.getElementById('galleryTrack');
+      const dotsWrap = document.getElementById('galleryDots');
+      if (!track) return;
+      const slides = track.querySelectorAll('.gallery-slide');
+      let i = 0;
+      slides.forEach((_, idx) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Slide ' + (idx + 1));
+        if (idx === 0) b.classList.add('active');
+        b.addEventListener('click', () => go(idx));
+        dotsWrap.appendChild(b);
+      });
+      const dots = dotsWrap.querySelectorAll('button');
+      function go(n) {
+        i = (n + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (i * 100) + '%)';
+        dots.forEach((d, di) => d.classList.toggle('active', di === i));
+      }
+      document.getElementById('galPrev')?.addEventListener('click', () => go(i - 1));
+      document.getElementById('galNext')?.addEventListener('click', () => go(i + 1));
+      setInterval(() => go(i + 1), 4500);
+    })();
   </script>
 </body>
 </html>
