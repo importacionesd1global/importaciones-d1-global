@@ -156,9 +156,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 <button type="button" data-filter="16">iPhone 16</button>
 <button type="button" data-filter="15">iPhone 15</button>
 </div>
-<div class="product-grid" id="productGrid">
-<!-- PRODUCTS_PLACEHOLDER -->
-</div>
+<div class="product-grid" id="productGrid"></div>
 </section>
 <section class="section" id="precios-colores">
 <div class="section-header reveal">
@@ -243,36 +241,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 document.querySelectorAll('#filters button').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.product-card').forEach(c=>{if(f==='all'||c.dataset.gen===f)c.classList.remove('hidden');else c.classList.add('hidden')})})});
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 (function(){const track=document.getElementById('galleryTrack'),dotsWrap=document.getElementById('galleryDots');if(!track)return;const slides=track.querySelectorAll('.gallery-slide');let i=0;slides.forEach((_,idx)=>{const b=document.createElement('button');b.type='button';if(idx===0)b.classList.add('active');b.addEventListener('click',()=>go(idx));dotsWrap.appendChild(b)});const dots=dotsWrap.querySelectorAll('button');function go(n){i=(n+slides.length)%slides.length;track.style.transform='translateX(-'+(i*100)+'%)';dots.forEach((d,di)=>d.classList.toggle('active',di===i))}document.getElementById('galPrev')?.addEventListener('click',()=>go(i-1));document.getElementById('galNext')?.addEventListener('click',()=>go(i+1));setInterval(()=>go(i+1),4500)})();
-const colorNames={plata:'Blanco',negro:'Negro',glaciar:'Gris glaciar',borgona:'Borgoña',azul:'Azul',desert:'Desert',natural:'Natural',naranja:'Naranja',rosa:'Rosa',teal:'Teal',ultramarine:'Ultramarine',lavender:'Lavanda',mistblue:'Mist Blue'};
-function fmt(n){return 'S/ '+n.toLocaleString('en-US')}
-document.querySelectorAll('.promx-card').forEach(card=>{
-  const baseP=+card.dataset.basePedido, baseE=+card.dataset.baseEntrega, gb=card.dataset.gb, model=card.dataset.model||'iPhone 18 Pro Max';
-  card.querySelectorAll('.color-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      card.querySelectorAll('.color-btn').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const extra=+btn.dataset.extra||0, color=btn.dataset.color, img=btn.dataset.img;
-      if(card.querySelector('.pm-pedido')){card.querySelector('.pm-pedido').textContent=fmt(baseP+extra);card.querySelector('.pm-entrega').textContent=fmt(baseE+extra)}
-      const cn=card.querySelector('.color-name');if(cn)cn.textContent=colorNames[color]||color;
-      if(img){const im=card.querySelector('.pm-img');if(im)im.src=img}
-      const wa=card.querySelector('.pm-wa');if(wa)wa.href='https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero '+model+' '+gb+' '+(colorNames[color]||color));
-    });
-  });
-});
-document.querySelectorAll('.product-card:not(.promx-card)').forEach(card=>{
-  card.querySelectorAll('.color-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      card.querySelectorAll('.color-btn').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const color=btn.dataset.color, img=btn.dataset.img;
-      const cn=card.querySelector('.color-name');if(cn)cn.textContent=colorNames[color]||color;
-      if(img){const im=card.querySelector('.pm-img');if(im)im.src=img}
-      const h3=card.querySelector('h3');
-      const wa=card.querySelector('.pm-wa');
-      if(wa&&h3)wa.href='https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero '+h3.textContent.trim()+' '+(colorNames[color]||color));
-    });
-  });
-});
 </script>
+<script src="products.js?v=3"></script>
 </body>
 </html>
