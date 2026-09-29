@@ -1,1 +1,1 @@
-document.addEventListener('DOMContentLoaded',function(){var g=document.getElementById('productGrid');if(!g)return;g.innerHTML='LOADING';});
+document.addEventListener('DOMContentLoaded',function(){var g=document.getElementById('productGrid');if(g)g.innerHTML='';});
