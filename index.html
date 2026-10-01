@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .btn-ghost{background:transparent;color:var(--white);border:1px solid var(--mid)}.btn-ghost:hover{border-color:var(--silver);background:var(--dark)}
 .btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1ebe57}.btn-block{width:100%}.btn-sm{padding:9px 16px;font-size:12px}
 .hero-video{position:relative;width:100%;height:100vh;min-height:560px;overflow:hidden;background:var(--black) center/cover no-repeat;background-image:url('nAHLf.jpg')}
-.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;pointer-events:none;transform:translate3d(0,0,0);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.hero-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;pointer-events:none;transform:translate3d(0,0,0);-webkit-backface-visibility:hidden;backface-visibility:hidden;image-rendering:-webkit-optimize-contrast;image-rendering:high-quality;-ms-interpolation-mode:bicubic}
 .hero-video .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,12,14,.05) 0%,rgba(11,12,14,.05) 50%,rgba(11,12,14,.4) 78%,rgba(11,12,14,.88) 100%);z-index:1}
 .hero-video .content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:24px 24px 72px}
 .hero-video .badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver);margin-bottom:12px;padding:5px 14px;border:1px solid rgba(195,199,206,.35);border-radius:980px}
@@ -119,8 +119,9 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 </div></nav>
 <section class="hero-video" id="hero">
 <video id="heroVideo" poster="nAHLf.jpg" autoplay muted loop playsinline webkit-playsinline preload="auto">
+<source src="https://v1.pinimg.com/videos/iht/hevcMp4V3/50/d7/7b/50d77bdeb5642003db47654b76f29085_720w.mp4" type="video/mp4">
 <source src="https://v1.pinimg.com/videos/iht/expMp4/50/d7/7b/50d77bdeb5642003db47654b76f29085_720w.mp4" type="video/mp4">
-<source src="hero.mp4?v=5" type="video/mp4">
+<source src="hero.mp4?v=6" type="video/mp4">
 </video>
 <div class="overlay"></div>
 <div class="content">
@@ -133,118 +134,3 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 </div></div>
 <div class="scroll-hint"><span>Scroll</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
 </section>
-<section class="gallery" id="promos">
-<div class="gallery-track" id="galleryTrack">
-<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-silver.png" alt="Blanco"><span class="gallery-caption">iPhone 18 Pro Max · Blanco</span></div>
-<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-black.png" alt="Negro"><span class="gallery-caption">iPhone 18 Pro Max · Negro</span></div>
-<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-glacier.png" alt="Glaciar"><span class="gallery-caption">iPhone 18 Pro Max · Gris glaciar</span></div>
-<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-burgundy.png" alt="Borgoña"><span class="gallery-caption">iPhone 18 Pro Max · Borgoña</span></div>
-</div>
-<button type="button" class="gallery-nav prev" id="galPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-<button type="button" class="gallery-nav next" id="galNext" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-<div class="gallery-dots" id="galleryDots"></div>
-</section>
-<div class="trust reveal">
-<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>1 año de garantía oficial</div>
-<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Equipos nuevos en caja sellada</div>
-<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Tiendas y oficinas físicas en todo el Perú</div>
-<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="3" width="15" height="13" rx="2"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Retiro en tienda · Envíos a todo el Perú</div>
-</div>
-<section class="section" id="catalogo">
-<div class="section-header reveal"><h2>Catálogo iPhone</h2><p>Preventa iPhone 18 Pro / Pro Max / Dúo · Stock 17, 16 y 15</p></div>
-<div class="filter-tabs reveal" id="filters">
-<button type="button" class="active" data-filter="all">Todos</button>
-<button type="button" data-filter="18">iPhone 18</button>
-<button type="button" data-filter="17">iPhone 17</button>
-<button type="button" data-filter="16">iPhone 16</button>
-<button type="button" data-filter="15">iPhone 15</button>
-</div>
-<div class="product-grid" id="productGrid"></div>
-</section>
-<section class="section" id="precios-colores">
-<div class="section-header reveal">
-<h2>Precios iPhone 18 Pro Max por color</h2>
-<p>Blanco = precio base · Negro +S/100 · Gris glaciar +S/200 · Borgoña +S/300</p>
-</div>
-<div class="price-table-wrap reveal">
-<table class="price-table">
-<thead>
-<tr>
-<th>Capacidad</th>
-<th><span class="color-dot" style="background:linear-gradient(145deg,#e8e8e8,#b0b0b0)"></span>Blanco</th>
-<th><span class="color-dot" style="background:linear-gradient(145deg,#3a3a3a,#0a0a0a)"></span>Negro</th>
-<th><span class="color-dot" style="background:linear-gradient(145deg,#c5d4e0,#7a9bb0)"></span>Glaciar</th>
-<th><span class="color-dot" style="background:linear-gradient(145deg,#8b3a4a,#4a1520)"></span>Borgoña</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>256 GB</strong><br><span class="muted">A pedido / Contra entrega</span></td>
-<td class="num">S/ 6,599<br><span class="muted">S/ 6,999</span></td>
-<td class="num">S/ 6,699<br><span class="muted">S/ 7,099</span></td>
-<td class="num">S/ 6,799<br><span class="muted">S/ 7,199</span></td>
-<td class="num">S/ 6,899<br><span class="muted">S/ 7,299</span></td>
-</tr>
-<tr>
-<td><strong>512 GB</strong><br><span class="muted">A pedido / Contra entrega</span></td>
-<td class="num">S/ 7,399<br><span class="muted">S/ 7,699</span></td>
-<td class="num">S/ 7,499<br><span class="muted">S/ 7,799</span></td>
-<td class="num">S/ 7,599<br><span class="muted">S/ 7,899</span></td>
-<td class="num">S/ 7,699<br><span class="muted">S/ 7,999</span></td>
-</tr>
-<tr>
-<td><strong>1 TB</strong><br><span class="muted">A pedido / Contra entrega</span></td>
-<td class="num">S/ 7,999<br><span class="muted">S/ 8,599</span></td>
-<td class="num">S/ 8,099<br><span class="muted">S/ 8,699</span></td>
-<td class="num">S/ 8,199<br><span class="muted">S/ 8,799</span></td>
-<td class="num">S/ 8,299<br><span class="muted">S/ 8,899</span></td>
-</tr>
-<tr>
-<td><strong>2 TB</strong><br><span class="muted">A pedido / Contra entrega</span></td>
-<td class="num">S/ 9,490<br><span class="muted">S/ 9,999</span></td>
-<td class="num">S/ 9,590<br><span class="muted">S/ 10,099</span></td>
-<td class="num">S/ 9,690<br><span class="muted">S/ 10,199</span></td>
-<td class="num">S/ 9,790<br><span class="muted">S/ 10,299</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p class="reveal" style="text-align:center;margin-top:20px;font-size:13px;color:var(--silver)">¿Listo para reservar? <a href="https://wa.me/51997610401?text=Hola%2C%20quiero%20iPhone%2018%20Pro%20Max" target="_blank" rel="noopener" style="color:var(--white);text-decoration:underline">Escríbenos por WhatsApp</a></p>
-</section>
-<section class="section" id="tienda">
-<div class="section-header reveal"><h2>Tiendas y oficinas</h2><p>Presencia física en todo el Perú · Atención y retiro en tienda</p></div>
-<div class="store-box reveal">
-<h3>Cusco · Centro Comercial IMA SUMAQ 265</h3>
-<p class="addr">Calle Maruri · 2do piso · Cusco<br><span style="color:var(--silver);font-size:13px;margin-top:8px;display:inline-block">También contamos con tiendas y oficinas en otras ciudades del Perú. Consulta por WhatsApp tu punto más cercano.</span></p>
-<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-<a href="https://maps.google.com/?q=Centro+Comercial+IMA+SUMAQ+265+Cusco" class="btn btn-ghost" target="_blank" rel="noopener">Cómo llegar</a>
-<a href="https://wa.me/51997610401" class="btn btn-white" target="_blank" rel="noopener">WhatsApp 997 610 401</a>
-</div></div>
-</section>
-<div class="cta"><h2 class="reveal">¿Listo para comprar?</h2><p class="reveal d1">Escríbenos y reserva tu iPhone.</p>
-<div class="cta-row reveal d2">
-<a href="https://wa.me/51997610401?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20iPhone" class="btn btn-wa" target="_blank" rel="noopener">+51 997 610 401</a>
-<a href="#catalogo" class="btn btn-ghost">Ver catálogo</a>
-</div></div>
-<footer class="footer"><div class="footer-inner">
-<div class="footer-col"><h4>Productos</h4><ul>
-<li><a href="#iphone18">iPhone 18</a></li>
-<li><a href="#precios-colores">Precios por color</a></li>
-<li><a href="#iphone17">iPhone 17</a></li>
-<li><a href="#tienda">Tiendas en el Perú</a></li>
-</ul></div>
-<div class="footer-col"><h4>Contacto</h4><ul>
-<li><a href="https://wa.me/51997610401" target="_blank" rel="noopener">WhatsApp 997 610 401</a></li>
-<li><a href="#tienda">Tiendas en el Perú</a></li>
-</ul></div>
-</div><div class="footer-bottom"><p>© 2026 Importaciones D1 Global</p></div></footer>
-<a href="https://wa.me/51997610401" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<script>
-(function(){const hv=document.getElementById('heroVideo');if(!hv)return;hv.muted=true;hv.volume=0;const play=()=>{const p=hv.play();if(p&&p.catch)p.catch(()=>{})};if(hv.readyState>=2)play();else hv.addEventListener('canplay',play,{once:true});document.addEventListener('click',play,{once:true});hv.addEventListener('error',()=>{hv.style.display='none'})})();
-document.querySelectorAll('#filters button').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.product-card').forEach(c=>{if(f==='all'||c.dataset.gen===f)c.classList.remove('hidden');else c.classList.add('hidden')})})});
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-(function(){const track=document.getElementById('galleryTrack'),dotsWrap=document.getElementById('galleryDots');if(!track)return;const slides=track.querySelectorAll('.gallery-slide');let i=0;slides.forEach((_,idx)=>{const b=document.createElement('button');b.type='button';if(idx===0)b.classList.add('active');b.addEventListener('click',()=>go(idx));dotsWrap.appendChild(b)});const dots=dotsWrap.querySelectorAll('button');function go(n){i=(n+slides.length)%slides.length;track.style.transform='translateX(-'+(i*100)+'%)';dots.forEach((d,di)=>d.classList.toggle('active',di===i))}document.getElementById('galPrev')?.addEventListener('click',()=>go(i-1));document.getElementById('galNext')?.addEventListener('click',()=>go(i+1));setInterval(()=>go(i+1),4500)})();
-</script>
-<script src="products.js?v=3"></script>
-</body>
-</html>
