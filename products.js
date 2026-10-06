@@ -19,13 +19,15 @@ function cardPM(gb,p,e,id){
   '<div class="product-prices"><div class="price-main"><div class="label">A pedido</div><div class="amount pm-pedido">'+fmt(p)+'</div></div><div class="price-alt">Contra entrega<strong class="pm-entrega">'+fmt(e)+'</strong></div></div>'+
   '<a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone 18 Pro Max '+gb+' Blanco')+'" class="btn btn-white btn-block pm-wa" target="_blank" rel="noopener">Reservar</a></div></article>';
 }
-function cardDuo(gb,p,e){
-  return '<article class="product-card reveal" data-gen="18"><div class="product-img"><span class="product-badge">Preventa</span><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-black.png" alt="iPhone Duo"></div><div class="product-body"><h3>iPhone Duo</h3><p class="product-spec">'+gb+' · Entregas desde 25 oct</p><div class="product-prices"><div class="price-main"><div class="label">Preventa</div><div class="amount">'+fmt(p)+'</div></div><div class="price-alt">Contra entrega<strong>'+fmt(e)+'</strong></div></div><a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone Duo '+gb)+'" class="btn btn-white btn-block" target="_blank" rel="noopener">Reservar</a></div></article>';
+function cardDuo(gb,p,e,img){
+  return '<article class="product-card reveal" data-gen="18"><div class="product-img"><span class="product-badge">Preventa</span><img src="'+img+'" alt="iPhone Dúo"></div><div class="product-body"><h3>iPhone Dúo</h3><p class="product-spec">'+gb+' · Entregas desde 25 oct</p><div class="product-prices"><div class="price-main"><div class="label">Preventa</div><div class="amount">'+fmt(p)+'</div></div><div class="price-alt">Contra entrega<strong>'+fmt(e)+'</strong></div></div><a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone Dúo '+gb)+'" class="btn btn-white btn-block" target="_blank" rel="noopener">Reservar</a></div></article>';
 }
 function cardSimple(gen,name,spec,img,unit,p3,p10,badge){
   var b=badge?'<span class="product-badge">'+badge+'</span>':'';
   return '<article class="product-card reveal" data-gen="'+gen+'"><div class="product-img">'+b+'<img class="pm-img" src="'+img+'" alt="'+name+'"></div><div class="product-body"><h3>'+name+'</h3><p class="product-spec">'+spec+'</p><div class="product-prices"><div class="price-main"><div class="label">Unidad</div><div class="amount">'+fmt(unit)+'</div></div><div class="price-alt">+3: '+fmt(p3)+'<br>+10: '+fmt(p10)+'</div></div><a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero '+name)+'" class="btn btn-white btn-block pm-wa" target="_blank" rel="noopener">Comprar</a></div></article>';
 }
+var duoSilver='https://litter.catbox.moe/fa8mk9.png';
+var duoBlack='https://litter.catbox.moe/iznrhn.png';
 var cards='';
 cards+=cardPro('256 GB',5799,6199);
 cards+=cardPro('512 GB',6399,6799);
@@ -34,10 +36,10 @@ cards+=cardPM('256 GB',6599,6999,'iphone18');
 cards+=cardPM('512 GB',7399,7699);
 cards+=cardPM('1 TB',7999,8599);
 cards+=cardPM('2 TB',9490,9999);
-cards+=cardDuo('256 GB',8390,8790);
-cards+=cardDuo('512 GB',8990,9699);
-cards+=cardDuo('1 TB',10390,11290);
-cards+=cardDuo('2 TB',12390,13190);
+cards+=cardDuo('256 GB',8390,8790,duoSilver);
+cards+=cardDuo('512 GB',8990,9699,duoBlack);
+cards+=cardDuo('1 TB',10390,11290,duoSilver);
+cards+=cardDuo('2 TB',12390,13190,duoBlack);
 cards+=cardSimple('17','iPhone 17','256 GB eSIM','https://d1storeperu.github.io/d1-store/public/phones/17-black.png',3699,3599,3299,'Nuevo');
 cards+=cardSimple('17','iPhone 17 Pro','256 GB eSIM','https://d1storeperu.github.io/d1-store/public/phones/17-pro-blue.png',4499,4299,4099,'Nuevo');
 cards+=cardSimple('17','iPhone 17 Pro Max','256 GB eSIM','https://d1storeperu.github.io/d1-store/public/phones/17-pro-max-blue.png',4999,4799,4499,'Nuevo');
@@ -64,7 +66,7 @@ var bodyHtml=
 '<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Tiendas en Lima, Cusco y Arequipa</div>'+
 '<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="3" width="15" height="13" rx="2"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Retiro en tienda · Envíos a todo el Perú</div>'+
 '</div>'+
-'<section class="section" id="catalogo"><div class="section-header reveal"><h2>Catálogo iPhone</h2><p>Preventa iPhone 18 Pro / Pro Max / Duo · Stock 17, 16 y 15</p></div>'+
+'<section class="section" id="catalogo"><div class="section-header reveal"><h2>Catálogo iPhone</h2><p>Preventa iPhone 18 Pro / Pro Max / Dúo · Stock 17, 16 y 15</p></div>'+
 '<div class="filter-tabs reveal" id="filters">'+
 '<button type="button" class="active" data-filter="all">Todos</button>'+
 '<button type="button" data-filter="18">iPhone 18</button>'+
