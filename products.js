@@ -20,7 +20,7 @@ function cardPM(gb,p,e,id){
   '<a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone 18 Pro Max '+gb+' Blanco')+'" class="btn btn-white btn-block pm-wa" target="_blank" rel="noopener">Reservar</a></div></article>';
 }
 function cardDuo(gb,p,e){
-  return '<article class="product-card reveal" data-gen="18"><div class="product-img"><span class="product-badge">Preventa</span><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-silver.png" alt="iPhone 18 Dúo"></div><div class="product-body"><h3>iPhone 18 Dúo</h3><p class="product-spec">'+gb+' · Entregas desde 25 oct</p><div class="product-prices"><div class="price-main"><div class="label">Preventa</div><div class="amount">'+fmt(p)+'</div></div><div class="price-alt">Contra entrega<strong>'+fmt(e)+'</strong></div></div><a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone 18 Dúo '+gb)+'" class="btn btn-white btn-block" target="_blank" rel="noopener">Reservar</a></div></article>';
+  return '<article class="product-card reveal" data-gen="18"><div class="product-img"><span class="product-badge">Preventa</span><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-black.png" alt="iPhone Duo"></div><div class="product-body"><h3>iPhone Duo</h3><p class="product-spec">'+gb+' · Entregas desde 25 oct</p><div class="product-prices"><div class="price-main"><div class="label">Preventa</div><div class="amount">'+fmt(p)+'</div></div><div class="price-alt">Contra entrega<strong>'+fmt(e)+'</strong></div></div><a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone Duo '+gb)+'" class="btn btn-white btn-block" target="_blank" rel="noopener">Reservar</a></div></article>';
 }
 function cardSimple(gen,name,spec,img,unit,p3,p10,badge){
   var b=badge?'<span class="product-badge">'+badge+'</span>':'';
@@ -61,10 +61,10 @@ var bodyHtml=
 '<div class="trust reveal">'+
 '<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>1 año de garantía oficial</div>'+
 '<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>Equipos nuevos en caja sellada</div>'+
-'<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Tiendas y oficinas físicas en todo el Perú</div>'+
+'<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Tiendas en Lima, Cusco y Arequipa</div>'+
 '<div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="3" width="15" height="13" rx="2"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>Retiro en tienda · Envíos a todo el Perú</div>'+
 '</div>'+
-'<section class="section" id="catalogo"><div class="section-header reveal"><h2>Catálogo iPhone</h2><p>Preventa iPhone 18 Pro / Pro Max / Dúo · Stock 17, 16 y 15</p></div>'+
+'<section class="section" id="catalogo"><div class="section-header reveal"><h2>Catálogo iPhone</h2><p>Preventa iPhone 18 Pro / Pro Max / Duo · Stock 17, 16 y 15</p></div>'+
 '<div class="filter-tabs reveal" id="filters">'+
 '<button type="button" class="active" data-filter="all">Todos</button>'+
 '<button type="button" data-filter="18">iPhone 18</button>'+
@@ -72,7 +72,7 @@ var bodyHtml=
 '<button type="button" data-filter="16">iPhone 16</button>'+
 '<button type="button" data-filter="15">iPhone 15</button>'+
 '</div><div class="product-grid" id="productGrid"></div></section>'+
-'<section class="section" id="precios-colores"><div class="section-header reveal"><h2>Precios iPhone 18 Pro Max por color</h2><p>Blanco = precio base · Negro +S/100 · Gris glaciar +S/200 · Borgoña +S/300</p></div>'+
+'<section class="section" id="precios-colores"><div class="section-header reveal"><h2>Precios iPhone 18 Pro Max por color</h2><p>Elige tu color y capacidad</p></div>'+
 '<div class="price-table-wrap reveal"><table class="price-table"><thead><tr>'+
 '<th>Capacidad</th>'+
 '<th><span class="color-dot" style="background:linear-gradient(145deg,#e8e8e8,#b0b0b0)"></span>Blanco</th>'+
@@ -86,7 +86,7 @@ var bodyHtml=
 '<tr><td><strong>2 TB</strong><br><span class="muted">A pedido / Contra entrega</span></td><td class="num">S/ 9,490<br><span class="muted">S/ 9,999</span></td><td class="num">S/ 9,590<br><span class="muted">S/ 10,099</span></td><td class="num">S/ 9,690<br><span class="muted">S/ 10,199</span></td><td class="num">S/ 9,790<br><span class="muted">S/ 10,299</span></td></tr>'+
 '</tbody></table></div></section>'+
 '<section class="section" id="tienda"><div class="section-header reveal"><h2>Tiendas y oficinas</h2><p>Retiro en tienda · Envíos a todo el Perú</p></div>'+
-'<div class="store-box reveal"><h3>Referencia Cusco</h3><p class="addr">IMA SUMAQ 265 · 2do piso<br>Cusco, Perú<br><br>También contamos con puntos de atención y envíos en Lima, Arequipa, Trujillo y más ciudades.</p>'+
+'<div class="store-box reveal"><h3>Referencia Cusco</h3><p class="addr">IMA SUMAQ 265 · 2do piso<br>Cusco, Perú<br><br>También contamos con tiendas en Lima, Cusco y Arequipa.</p>'+
 '<a href="https://wa.me/51997610401?text=Hola%2C%20quiero%20saber%20dónde%20retirar" class="btn btn-white" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></section>'+
 '<div class="cta reveal"><h2>¿Listo para tu nuevo iPhone?</h2><p>Preventa abierta · Pago contra entrega · Garantía 1 año</p>'+
 '<div class="cta-row"><a href="https://wa.me/51997610401?text=Hola%2C%20quiero%20comprar" class="btn btn-wa" target="_blank" rel="noopener">Escribir por WhatsApp</a>'+
