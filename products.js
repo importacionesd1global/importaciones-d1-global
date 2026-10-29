@@ -1,14 +1,21 @@
 (function(){
 function fmt(n){return 'S/ '+Number(n).toLocaleString('en-US')}
 function cardPro(gb,p,e){
-  return '<article class="product-card reveal" data-gen="18"><div class="product-img"><span class="product-badge">Preventa</span><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-black.png" alt="iPhone 18 Pro"></div><div class="product-body"><h3>iPhone 18 Pro</h3><p class="product-spec">'+gb+' eSIM</p><div class="product-prices"><div class="price-main"><div class="label">A pedido</div><div class="amount">'+fmt(p)+'</div></div><div class="price-alt">Contra entrega<strong>'+fmt(e)+'</strong></div></div><a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone 18 Pro '+gb)+'" class="btn btn-white btn-block" target="_blank" rel="noopener">Reservar</a></div></article>';
+  return '<article class="product-card reveal promx-card" data-gen="18" data-base-pedido="'+p+'" data-base-entrega="'+e+'" data-gb="'+gb+'" data-model="iPhone 18 Pro">'+
+  '<div class="product-img"><span class="product-badge">Preventa</span><img class="pm-img" src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-silver.png" alt="iPhone 18 Pro"></div>'+
+  '<div class="product-body"><h3>iPhone 18 Pro</h3><p class="product-spec">'+gb+' eSIM · <span class="color-name">Blanco</span></p>'+swatches('18-pro')+
+  '<div class="product-prices"><div class="price-main"><div class="label">A pedido</div><div class="amount pm-pedido">'+fmt(p)+'</div></div><div class="price-alt">Contra entrega<strong class="pm-entrega">'+fmt(e)+'</strong></div></div>'+
+  '<a href="https://wa.me/51997610401?text='+encodeURIComponent('Hola, quiero iPhone 18 Pro '+gb+' Blanco')+'" class="btn btn-white btn-block pm-wa" target="_blank" rel="noopener">Reservar</a></div></article>';
 }
-function swatches(){
+function swatches(model){
+  model = model || '18-pro-max';
+  var extra = model === '18-pro' ? ['0','0','0','0'] : ['0','100','200','300'];
+  var base = 'https://d1storeperu.github.io/d1-store/public/phones/'+model;
   return '<div class="color-row"><span class="color-label">Color</span><div class="color-swatches">'+
-  '<button type="button" class="color-btn active" data-color="plata" data-extra="0" data-img="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-silver.png" title="Blanco"></button>'+
-  '<button type="button" class="color-btn" data-color="negro" data-extra="100" data-img="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-black.png" title="Negro"></button>'+
-  '<button type="button" class="color-btn" data-color="glaciar" data-extra="200" data-img="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-glacier.png" title="Gris glaciar"></button>'+
-  '<button type="button" class="color-btn" data-color="borgona" data-extra="300" data-img="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-burgundy.png" title="Borgoña"></button>'+
+  '<button type="button" class="color-btn active" data-color="plata" data-extra="'+extra[0]+'" data-img="'+base+'-silver.png" title="Blanco"></button>'+
+  '<button type="button" class="color-btn" data-color="negro" data-extra="'+extra[1]+'" data-img="'+base+'-black.png" title="Negro"></button>'+
+  '<button type="button" class="color-btn" data-color="glaciar" data-extra="'+extra[2]+'" data-img="'+base+'-glacier.png" title="Gris glaciar"></button>'+
+  '<button type="button" class="color-btn" data-color="borgona" data-extra="'+extra[3]+'" data-img="'+base+'-burgundy.png" title="Borgoña"></button>'+
   '</div></div>';
 }
 function swatches17Pro(prefix){
@@ -113,6 +120,18 @@ var bodyHtml=
 '<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-black.png" alt="Negro"><span class="gallery-caption">iPhone 18 Pro Max · Negro</span></div>'+
 '<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-glacier.png" alt="Glaciar"><span class="gallery-caption">iPhone 18 Pro Max · Gris glaciar</span></div>'+
 '<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-max-burgundy.png" alt="Borgoña"><span class="gallery-caption">iPhone 18 Pro Max · Borgoña</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-silver.png" alt="Blanco"><span class="gallery-caption">iPhone 18 Pro · Blanco</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-black.png" alt="Negro"><span class="gallery-caption">iPhone 18 Pro · Negro</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-glacier.png" alt="Glaciar"><span class="gallery-caption">iPhone 18 Pro · Gris glaciar</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/18-pro-burgundy.png" alt="Borgoña"><span class="gallery-caption">iPhone 18 Pro · Borgoña</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-pro-max-blue.png" alt="Deep Blue"><span class="gallery-caption">iPhone 17 Pro Max · Deep Blue</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-pro-max-orange.png" alt="Cosmic Orange"><span class="gallery-caption">iPhone 17 Pro Max · Cosmic Orange</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-pro-max-silver.png" alt="Silver"><span class="gallery-caption">iPhone 17 Pro Max · Silver</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-black.png" alt="Black"><span class="gallery-caption">iPhone 17 · Black</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-white.png" alt="White"><span class="gallery-caption">iPhone 17 · White</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-lavender.png" alt="Lavender"><span class="gallery-caption">iPhone 17 · Lavender</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-mistblue.png" alt="Mist Blue"><span class="gallery-caption">iPhone 17 · Mist Blue</span></div>'+
+'<div class="gallery-slide"><img src="https://d1storeperu.github.io/d1-store/public/phones/17-sage.png" alt="Sage"><span class="gallery-caption">iPhone 17 · Sage</span></div>'+
 '</div>'+
 '<button type="button" class="gallery-nav prev" id="galPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>'+
 '<button type="button" class="gallery-nav next" id="galNext" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>'+
@@ -131,7 +150,14 @@ var bodyHtml=
 '<button type="button" data-filter="16">iPhone 16</button>'+
 '<button type="button" data-filter="15">iPhone 15</button>'+
 '</div><div class="product-grid" id="productGrid"></div></section>'+
-'<section class="section" id="precios-colores"><div class="section-header reveal"><h2>Precios iPhone 18 Pro Max por color</h2><p>Elige tu color y capacidad</p></div>'+
+'<section class="section" id="precios-colores"><div class="section-header reveal"><h2>Colores disponibles</h2><p>iPhone 18 Pro, 18 Pro Max, 17 y 17 Pro Max</p></div>'+
+'<div class="price-table-wrap reveal" style="margin-bottom:28px"><table class="price-table"><thead><tr><th>Modelo</th><th>Colores</th></tr></thead><tbody>'+
+'<tr><td><strong>iPhone 18 Pro</strong></td><td><span class="color-dot" style="background:linear-gradient(145deg,#e8e8e8,#b0b0b0)"></span>Blanco <span class="color-dot" style="background:linear-gradient(145deg,#3a3a3a,#0a0a0a)"></span>Negro <span class="color-dot" style="background:linear-gradient(145deg,#c5d4e0,#7a9bb0)"></span>Gris glaciar <span class="color-dot" style="background:linear-gradient(145deg,#8b3a4a,#4a1520)"></span>Borgoña</td></tr>'+
+'<tr><td><strong>iPhone 18 Pro Max</strong></td><td><span class="color-dot" style="background:linear-gradient(145deg,#e8e8e8,#b0b0b0)"></span>Blanco <span class="color-dot" style="background:linear-gradient(145deg,#3a3a3a,#0a0a0a)"></span>Negro <span class="color-dot" style="background:linear-gradient(145deg,#c5d4e0,#7a9bb0)"></span>Gris glaciar <span class="color-dot" style="background:linear-gradient(145deg,#8b3a4a,#4a1520)"></span>Borgoña</td></tr>'+
+'<tr><td><strong>iPhone 17</strong></td><td><span class="color-dot" style="background:linear-gradient(145deg,#3a3a3a,#0a0a0a)"></span>Black <span class="color-dot" style="background:linear-gradient(145deg,#f5f5f5,#d8d8d8)"></span>White <span class="color-dot" style="background:linear-gradient(145deg,#c8b8e0,#8870b0)"></span>Lavender <span class="color-dot" style="background:linear-gradient(145deg,#a8c8e0,#6080a0)"></span>Mist Blue <span class="color-dot" style="background:linear-gradient(145deg,#a8c4a0,#5a7a58)"></span>Sage</td></tr>'+
+'<tr><td><strong>iPhone 17 Pro Max</strong></td><td><span class="color-dot" style="background:linear-gradient(145deg,#3a5a9a,#0e1e4a)"></span>Deep Blue <span class="color-dot" style="background:linear-gradient(145deg,#f0a060,#c45a20)"></span>Cosmic Orange <span class="color-dot" style="background:linear-gradient(145deg,#e8e8e8,#b0b0b0)"></span>Silver</td></tr>'+
+'</tbody></table></div>'+
+'<div class="section-header reveal"><h2>Precios iPhone 18 Pro Max por color</h2><p>Elige tu color y capacidad</p></div>'+
 '<div class="price-table-wrap reveal"><table class="price-table"><thead><tr>'+
 '<th>Capacidad</th>'+
 '<th><span class="color-dot" style="background:linear-gradient(145deg,#e8e8e8,#b0b0b0)"></span>Blanco</th>'+
